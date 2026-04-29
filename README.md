@@ -1,26 +1,23 @@
-# 🚀 MeshGate – Production-Ready Dockerized Web Application
+# MeshGate DevOps Platform
 
-A full-stack application demonstrating a **production-style DevOps setup** using Docker, Nginx reverse proxy, and Docker Compose.
+Production-ready DevOps platform using Docker, GitHub Actions CI/CD, and a microservices-style frontend/backend architecture.
 
----
+## Project Status
 
-## 📌 Overview
+In progress — CI/CD pipeline setup underway.
 
-This project consists of:
+## Planned Features
 
-- **Frontend**: Static HTML/CSS served via Nginx
-- **Backend**: Python API returning JSON responses
-- **Reverse Proxy**: Nginx routing `/api/` requests to backend
-- **Containerization**: Docker
-- **Orchestration**: Docker Compose
+- Dockerized frontend and backend services
+- GitHub Actions CI/CD pipeline
+- Automated build checks
+- Deployment-ready project structure
+- Infrastructure-as-Code preparation
 
----
+## Tech Stack
 
-## 🏗️ Architecture
-
-```text
-Browser (localhost:3000)
-        ↓
-   Nginx (Frontend Container)
-        ↓
-   Backend Container (API)
+- Docker
+- Docker Compose
+- GitHub Actions
+- Python backend
+- Frontend service 
