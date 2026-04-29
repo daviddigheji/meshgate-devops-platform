@@ -1,61 +1,71 @@
 # MeshGate DevOps Platform
 
-Production-ready DevOps platform demonstrating containerized microservices, CI/CD automation, and scalable application design.
+## Project Overview
+
+MeshGate is a containerized full-stack application designed to demonstrate modern DevOps practices using Docker and GitHub Actions.  
+The project showcases how to build, run, and automate a multi-service application with a production-style workflow.
 
 ---
 
-## Overview
+##  Architecture
 
-MeshGate is a DevOps-focused project that showcases how to build, containerize, and automate the deployment pipeline for a modern application using industry-standard tools.
+The application consists of:
 
-The platform consists of a frontend and backend service, fully containerized with Docker and integrated into a CI pipeline using GitHub Actions.
-
----
-
-## Architecture
-
-This project follows a microservices-style architecture:
-
-- Frontend service (UI)
-- Backend service (API)
-- Containerized using Docker
-- Orchestrated locally with Docker Compose
-
-See full details: [Architecture Overview](docs/architecture.md)
+- **Frontend**: Static web interface (served via Nginx)
+- **Backend**: Python-based API service
+- **Containerization**: Docker & Docker Compose
+- **CI/CD**: GitHub Actions pipeline
 
 ---
 
-##  Documentation
+## Technologies Used
 
-- [Architecture Overview](docs/architecture.md)
-- [CI/CD Pipeline](docs/cicd.md)
-
----
-
-## Project Structure (Visual)
-![Project Structure](screenshots/project-structure.png)
-
----
-
-## Tech Stack
-
-- Docker
-- Docker Compose
-- GitHub Actions (CI/CD)
-- Python (Backend)
-- HTML / CSS / JavaScript (Frontend)
+- Docker  
+- Docker Compose  
+- GitHub Actions  
+- Python (Backend)  
+- HTML/CSS (Frontend)  
+- Nginx  
 
 ---
 
-## 🔄 CI/CD Pipeline
+##  CI/CD Pipeline (GitHub Actions)
 
-The project includes a CI pipeline using GitHub Actions that automatically:
+This project includes a fully automated CI pipeline using GitHub Actions.
 
-- Builds the backend Docker image
-- Builds the frontend Docker image
-- Validates the application structure on every push to `main`
+###  Pipeline Features
 
-See full pipeline details: [CI/CD Pipeline](docs/cicd.md)
+- Automatically triggers on push and pull requests to `main`
+- Builds Docker images for:
+  - Backend service
+  - Frontend service
+- Validates `docker-compose.yml` configuration
+- Ensures the application is always in a deployable state
+
+###  Pipeline Execution
+
+####  CI Pipeline Success
+![CI Success](screenshots/cicd/05-github-actions-ci-success.png)
+
+####  Pipeline Steps Execution
+![CI Steps](screenshots/cicd/06-ci-pipeline-steps-success.png)
+
+---
+
+##  Screenshots
+
+###  Application Running (Frontend)
+![Frontend](screenshots/frontend/01-frontend-running.png)
+
+###  Backend Service Running
+![Backend](screenshots/backend/02-backend-running.png)
+
+###  Docker Containers
+![Docker](screenshots/compose/03-docker-containers.png)
+
+---
+
+##  Setup Instructions
 
 ---
 
@@ -76,29 +86,24 @@ docker-compose up --build
 
 ---
 
-## Screenshots
-
-Screenshots of the running application and CI pipeline are available in the `/screenshots` directory.
-
----
-
 ## Future Improvements
 
-- Push Docker images to registry (Docker Hub / AWS ECR)
-- Add deployment stage (AWS ECS or EC2)
-- Implement automated testing
-- Provision infrastructure using Terraform
+- Push Docker images to registry  AWS ECR
+- Add deployment stage 
+- Deploy to AWS  (ECS/EC2)
+- Add monitoring (CloudWatch)
 
 ---
 
 ## Author
 
 **David Digheji**  
-Cloud & DevOps Engineer  
+Cloud & DevOps Engineer
+London, United Kingdom  
 
 - GitHub: https://github.com/daviddigheji
 - Portfolio: https://daviddigheji.com
-
+- Linkedin: https://linkedin.com/in/david-digheji
 ---
 
 ## 💡 Key Takeaway
