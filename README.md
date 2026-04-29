@@ -1,23 +1,26 @@
 # MeshGate DevOps Platform
 
-Production-ready DevOps platform using Docker, GitHub Actions CI/CD, and a microservices-style frontend/backend architecture.
+Production-ready DevOps platform demonstrating containerized microservices, CI/CD automation, and scalable application design.
 
-## Project Status
+---
 
-In progress — CI/CD pipeline setup underway.
+## Overview
 
-## Planned Features
+MeshGate is a DevOps-focused project that showcases how to build, containerize, and automate the deployment pipeline for a modern application using industry-standard tools.
 
-- Dockerized frontend and backend services
-- GitHub Actions CI/CD pipeline
-- Automated build checks
-- Deployment-ready project structure
-- Infrastructure-as-Code preparation
+The platform consists of a frontend and backend service, fully containerized with Docker and integrated into a CI pipeline using GitHub Actions.
 
-## Tech Stack
+---
 
-- Docker
-- Docker Compose
-- GitHub Actions
-- Python backend
-- Frontend service 
+## Architecture
+
+
+This project follows a microservices-style architecture with separate 
+frontend and backend services.
+
+See full details: [Architecture Overview](docs/architecture.md)
+
+
+---
+
+## Project Structure
