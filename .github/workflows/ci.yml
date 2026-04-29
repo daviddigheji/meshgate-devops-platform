@@ -2,12 +2,14 @@ name: MeshGate CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  docker-build-check:
+  docker-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,3 +21,6 @@ jobs:
 
       - name: Build frontend Docker image
         run: docker build -t meshgate-frontend ./services/frontend
+
+      - name: Validate Docker Compose file
+        run: docker compose config
