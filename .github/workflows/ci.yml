@@ -1,0 +1,21 @@
+name: MeshGate CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  docker-build-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build backend Docker image
+        run: docker build -t meshgate-backend ./services/backend
+
+      - name: Build frontend Docker image
+        run: docker build -t meshgate-frontend ./services/frontend
