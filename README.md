@@ -102,6 +102,6 @@ Cloud & DevOps Engineer
 ---
 
 ## 💡 Key Takeaway
-
+ 
 This project demonstrates practical DevOps skills including containerization, CI/CD automation, and production-level project structuring — aligned with real-world engineering practices.
 
