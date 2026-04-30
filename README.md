@@ -7,7 +7,7 @@ The project showcases how to build, run, and automate a multi-service applicatio
 
 ---
 
-##  Architecture
+## Architecture
 
 The application consists of:
 
@@ -29,11 +29,11 @@ The application consists of:
 
 ---
 
-##  CI/CD Pipeline (GitHub Actions)
+## CI/CD Pipeline (GitHub Actions)
 
 This project includes a fully automated CI pipeline using GitHub Actions.
 
-###  Pipeline Features
+### Pipeline Features
 
 - Automatically triggers on push and pull requests to `main`
 - Builds Docker images for:
@@ -42,7 +42,7 @@ This project includes a fully automated CI pipeline using GitHub Actions.
 - Validates `docker-compose.yml` configuration
 - Ensures the application is always in a deployable state
 
-###  Pipeline Execution
+### Pipeline Execution
 
 ####  CI Pipeline Success
 ![CI Success](screenshots/cicd/05-github-actions-ci-success.png)
@@ -52,7 +52,7 @@ This project includes a fully automated CI pipeline using GitHub Actions.
 
 ---
 
-##  Screenshots
+## Screenshots
 
 ###  Application Running (Frontend)
 ![Frontend](screenshots/frontend/01-frontend-running.png)
@@ -65,11 +65,32 @@ This project includes a fully automated CI pipeline using GitHub Actions.
 
 ---
 
-##  Setup Instructions
+## Docker Hub Integration
+
+This project automatically builds and pushes Docker images to Docker Hub via GitHub Actions.
+
+### Docker Images
+
+- Backend: https://hub.docker.com/r/daviddigheji/meshgate-backend  
+- Frontend: https://hub.docker.com/r/daviddigheji/meshgate-frontend  
+
+### Features
+
+- Automated Docker image build and push
+- Secure authentication using GitHub Secrets
+- Images tagged and stored for deployment use
+
+### Docker Hub Push Success
+
+![Docker Push](screenshots/cicd/07-dockerhub-push-success.png)
 
 ---
 
-## How to Run Locally
+## Setup Instructions
+
+---
+
+### How to Run Locally
 
 ### 1. Clone the repository
 git clone https://github.com/daviddigheji/meshgate-devops-platform.git
@@ -89,7 +110,7 @@ docker-compose up --build
 ## Future Improvements
 
 - Push Docker images to registry  AWS ECR
-- Add deployment stage 
+- Add deployment stage
 - Deploy to AWS  (ECS/EC2)
 - Add monitoring (CloudWatch)
 
@@ -106,7 +127,6 @@ London, United Kingdom
 - Linkedin: https://linkedin.com/in/david-digheji
 ---
 
-## 💡 Key Takeaway
+##  Key Takeaway
  
 This project demonstrates practical DevOps skills including containerization, CI/CD automation, and production-level project structuring — aligned with real-world engineering practices.
-
