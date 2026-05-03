@@ -1,15 +1,17 @@
-````markdown
 # MeshGate DevOps Platform
 
-A containerized DevOps project demonstrating a multi-service application using Docker and Docker Compose.
-
----
+A hands-on DevOps project demonstrating a containerized multi-service application using Docker and Docker Compose.
 
 ## Overview
 
 The MeshGate DevOps Platform is a hands-on project designed to simulate a real-world application environment using modern DevOps practices.
 
 It demonstrates how frontend and backend services are containerized, orchestrated, and communicate within a Docker network.
+
+---
+
+**Use Case:**  
+This project simulates a real-world web application where a frontend communicates with a backend API, similar to modern cloud-based microservices architectures.
 
 ---
 
@@ -46,6 +48,16 @@ Backend API (Flask container)
 ![Docker](screenshots/compose/01-docker-compose-up.png)
 
 ---
+## Quick Start
+
+Run the entire platform:
+
+```bash
+docker compose up --build
+```
+
+Then open:
+http://localhost:3000
 
 ## Getting Started
 
@@ -54,7 +66,7 @@ Backend API (Flask container)
 ```bash
 git clone https://github.com/daviddigheji/meshgate-devops-platform.git
 cd meshgate-devops-platform
-````
+```
 
 ---
 
@@ -139,6 +151,21 @@ docker logs meshgate-backend
 
 ---
 
+## Key Learnings
+
+- Gained hands-on experience with containerizing multi-service applications
+- Learned how services communicate using Docker networking
+- Troubleshot real-world issues such as container conflicts and port collisions
+- Improved understanding of application lifecycle (build → run → debug)
+
+## Design Decisions
+
+- Used Docker Compose for simplicity and rapid local orchestration
+- Separated frontend and backend for modularity and scalability
+- Exposed only necessary ports to simulate production-like isolation
+
+---
+
 ## Future Improvements
 
 * Add reverse proxy (NGINX)
@@ -153,10 +180,6 @@ docker logs meshgate-backend
 **David Digheji**
 Cloud & DevOps Engineer
 
-[david@daviddigheji.com](mailto:david@daviddigheji.com)
-[https://daviddigheji.com](https://daviddigheji.com)
-[https://github.com/daviddigheji](https://github.com/daviddigheji)
-
-```
-
----
+david@daviddigheji.com  
+https://daviddigheji.com  
+https://github.com/daviddigheji
