@@ -1,132 +1,162 @@
+````markdown
 # MeshGate DevOps Platform
 
-## Project Overview
+A containerized DevOps project demonstrating a multi-service application using Docker and Docker Compose.
 
-MeshGate is a containerized full-stack application designed to demonstrate modern DevOps practices using Docker and GitHub Actions.  
-The project showcases how to build, run, and automate a multi-service application with a production-style workflow.
+---
+
+## Overview
+
+The MeshGate DevOps Platform is a hands-on project designed to simulate a real-world application environment using modern DevOps practices.
+
+It demonstrates how frontend and backend services are containerized, orchestrated, and communicate within a Docker network.
+
+---
+
+## Tech Stack
+
+- Docker  
+- Docker Compose  
+- Python (Flask)  
+- NGINX (Frontend static server)  
+- Linux  
 
 ---
 
 ## Architecture
 
-The application consists of:
+Client (Browser)  
+        ↓  
+Frontend (NGINX container)  
+        ↓  
+Backend API (Flask container)  
 
-- **Frontend**: Static web interface (served via Nginx)
-- **Backend**: Python-based API service
-- **Containerization**: Docker & Docker Compose
-- **CI/CD**: GitHub Actions pipeline
-
----
-
-## Technologies Used
-
-- Docker  
-- Docker Compose  
-- GitHub Actions  
-- Python (Backend)  
-- HTML/CSS (Frontend)  
-- Nginx  
-
----
-
-## CI/CD Pipeline (GitHub Actions)
-
-This project includes a fully automated CI pipeline using GitHub Actions.
-
-### Pipeline Features
-
-- Automatically triggers on push and pull requests to `main`
-- Builds Docker images for:
-  - Backend service
-  - Frontend service
-- Validates `docker-compose.yml` configuration
-- Ensures the application is always in a deployable state
-
-### Pipeline Execution
-
-####  CI Pipeline Success
-![CI Success](screenshots/cicd/05-github-actions-ci-success.png)
-
-####  Pipeline Steps Execution
-![CI Steps](screenshots/cicd/06-ci-pipeline-steps-success.png)
+- Frontend serves static content and interacts with backend  
+- Backend processes requests and returns responses  
+- Services communicate via Docker internal network  
 
 ---
 
 ## Screenshots
 
-###  Application Running (Frontend)
-![Frontend](screenshots/frontend/01-frontend-running.png)
+### Application Running
+![App](screenshots/frontend/01-frontend-running-local.png)
 
-###  Backend Service Running
-![Backend](screenshots/backend/02-backend-running.png)
-
-###  Docker Containers
-![Docker](screenshots/compose/03-docker-containers.png)
+### Docker Containers
+![Docker](screenshots/compose/01-docker-compose-up.png)
 
 ---
 
-## Docker Hub Integration
+## Getting Started
 
-This project automatically builds and pushes Docker images to Docker Hub via GitHub Actions.
+### 1. Clone the Repository
 
-### Docker Images
-
-- Backend: https://hub.docker.com/r/daviddigheji/meshgate-backend  
-- Frontend: https://hub.docker.com/r/daviddigheji/meshgate-frontend  
-
-### Features
-
-- Automated Docker image build and push
-- Secure authentication using GitHub Secrets
-- Images tagged and stored for deployment use
-
-### Docker Hub Push Success
-
-![Docker Push](screenshots/cicd/07-dockerhub-push-success.png)
-
----
-
-## Setup Instructions
-
----
-
-### How to Run Locally
-
-### 1. Clone the repository
+```bash
 git clone https://github.com/daviddigheji/meshgate-devops-platform.git
-
 cd meshgate-devops-platform
+````
 
-### 2. Run the application
-docker-compose up --build
+---
 
-### 3. Access the application
+### 2. Run the Application
 
-- Frontend: http://localhost:3000  
-- Backend: http://localhost:8001  
+```bash
+docker compose down
+docker compose up --build
+```
+
+---
+
+### 3. Access in Browser
+
+```
+http://localhost:3000
+```
+
+---
+
+## Key Features
+
+* Multi-container application using Docker Compose
+* Service communication via Docker network
+* Clean and modular project structure
+* Practical DevOps workflow (build → run → test)
+
+---
+
+## Documentation
+
+[Technical Manual](docs/devops-platform-manual.md)
+
+---
+
+## Troubleshooting
+
+### Containers not running
+
+```bash
+docker ps
+```
+
+If no containers are running:
+
+```bash
+docker compose up --build
+```
+
+---
+
+### Containers exist but are stopped
+
+```bash
+docker ps -a
+```
+
+If you see "Exited":
+
+```bash
+docker rm meshgate-frontend meshgate-backend
+docker compose up --build
+```
+
+---
+
+### Container name already in use
+
+```bash
+docker compose down
+docker compose up --build
+```
+
+---
+
+### View logs
+
+```bash
+docker logs meshgate-frontend
+docker logs meshgate-backend
+```
 
 ---
 
 ## Future Improvements
 
-- Push Docker images to registry  AWS ECR
-- Add deployment stage
-- Deploy to AWS  (ECS/EC2)
-- Add monitoring (CloudWatch)
+* Add reverse proxy (NGINX)
+* Implement CI/CD pipeline (GitHub Actions)
+* Deploy to AWS ECS (Fargate)
+* Add monitoring and logging
 
 ---
 
 ## Author
 
-**David Digheji**  
+**David Digheji**
 Cloud & DevOps Engineer
-London, United Kingdom  
 
-- GitHub: https://github.com/daviddigheji
-- Portfolio: https://daviddigheji.com
-- Linkedin: https://linkedin.com/in/david-digheji
+[david@daviddigheji.com](mailto:david@daviddigheji.com)
+[https://daviddigheji.com](https://daviddigheji.com)
+[https://github.com/daviddigheji](https://github.com/daviddigheji)
+
+```
+
 ---
-
-##  Key Takeaway
- 
-This project demonstrates practical DevOps skills including containerization, CI/CD automation, and production-level project structuring — aligned with real-world engineering practices.
